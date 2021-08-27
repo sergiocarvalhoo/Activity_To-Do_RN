@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Atividade2-ReactNative-expo",
+    "slug": "Atividade2-ReactNative-expo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "Atividade2-ReactNative-expo"
+}
