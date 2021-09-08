@@ -26,7 +26,7 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    //TODO - remove task from state
+    const updatedTask = tasks.filter(task => task.id !== id);
   }
 
   
