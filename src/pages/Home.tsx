@@ -17,27 +17,36 @@ export function Home() {
       done: false
     }
 
-    setTasks(oldTasks => [...oldTasks, newTask]);    
+    setTasks(oldTasks => [...oldTasks, newTask]);
   }
 
   function handleToggleTaskDone(id: number) {
-    //TODO - toggle task done if exists
-       
+    const updatedTasks = tasks.map(task => ({ ...task }))
+
+    const foundTask = updatedTasks.find(item => item.id === id);
+
+    if (!foundTask) {
+      return;
+    }
+
+    foundTask.done = !foundTask.done;
+    setTasks(updatedTasks);
+
   }
 
   function handleRemoveTask(id: number) {
     const updatedTask = tasks.filter(task => task.id !== id);
   }
 
-  
+
   return (
     <View style={styles.container}>
       <Header tasksCounter={tasks.length} />
 
       <TodoInput addTask={handleAddTask} />
 
-      <TasksList 
-        tasks={tasks} 
+      <TasksList
+        tasks={tasks}
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask}
       />
