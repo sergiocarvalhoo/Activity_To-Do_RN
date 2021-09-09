@@ -11,6 +11,12 @@ export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   function handleAddTask(newTaskTitle: string) {
+    const mesmoTitle = tasks.find(task => task.title === newTaskTitle);
+
+    if (mesmoTitle) {
+      return Alert.alert('Está Task já existe!!!')
+    }
+
     const newTask = {
       id: new Date().getTime(),
       title: newTaskTitle,
