@@ -42,6 +42,7 @@ export function Home() {
 
   function handleRemoveTask(id: number) {
     const updatedTask = tasks.filter(task => task.id !== id);
+    setTasks(updatedTask);
   }
 
 

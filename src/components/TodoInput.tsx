@@ -35,7 +35,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
         testID="add-new-task-button"
         activeOpacity={0.7}
         style={styles.addButton}
-        //TODO - onPress prop
+        onPress={handleAddNewTask}
       >
         <Feather name="chevron-right" size={24} color="#B2B2B2" />
       </TouchableOpacity>
