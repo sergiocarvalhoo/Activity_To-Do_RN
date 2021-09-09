@@ -14,7 +14,7 @@ export function Home() {
     const mesmoTitle = tasks.find(task => task.title === newTaskTitle);
 
     if (mesmoTitle) {
-      return Alert.alert('Está Task já existe!!!')
+      return Alert.alert('Task já cadastrada', 'Você não pode cadastrar uma task com o mesmo nome')
     }
 
     const newTask = {
