@@ -41,8 +41,20 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    const updatedTask = tasks.filter(task => task.id !== id);
-    setTasks(updatedTask);
+    Alert.alert('Remover Task','Deseja realmente apagar essa task ?',[
+      {
+        style: 'cancel',
+        text: 'Não',
+      },
+      {
+        style:'destructive',
+        text: 'Sim',
+        onPress: () => {
+          const updatedTask = tasks.filter(task => task.id !== id);
+          setTasks(updatedTask);
+        }
+      } 
+    ])
   }
 
 
